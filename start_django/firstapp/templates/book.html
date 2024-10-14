@@ -1,0 +1,43 @@
+<!DOCTYPE html>
+<html lang="en">
+
+<head>
+<title>My Book</title>
+<meta charset="UTF-8">
+<meta name="viewport" content="width=device-width, initial-scale=1">
+
+</head>
+
+<body class="w3-content">
+<div class="w3-container">
+<h1>1. Metaphysics Book</h1>
+<h3>The nature of reality.</h3>
+<p>Metaphysics is the part of philosophy that studies the nature of reality.</p>
+
+<p>Is this Virtual Reality real?</p>
+<p>In Metaphysics, the questions is:</p>
+<ul>
+<li>What is real?</li>
+<li>Is what we see real?</li>
+<li>Is there more than we see?</li>
+<li>Is there more than we sence?</li>
+<li>Is there something else?</li>
+<li>Is there something more?</li>
+<li>Is there another dimension?</li>
+</ul>
+</div>
+
+<form action="">
+    <label for="inpf">Write here something</label>
+    <input type="text" id="inpf" name="bookname">
+    <input type="number" id="price" name="bookprice">
+    <input type="submit">
+    {%if BookName and BookPrice%}
+    <p>Book Name:{{BookName}}</p>
+    <p>Book price:{{BookPrice}}</p>
+    {%end
+        if%}
+</form>
+
+</body>
+</html>

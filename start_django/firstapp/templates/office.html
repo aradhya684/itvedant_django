@@ -1,0 +1,33 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Document</title>
+</head>
+<body>
+    <h1>The office</h1>
+    <a href="{% url 'homepage' %}">press here to go on a home page</a>
+    <a href="{%url 'studentpage'%}" style="display: block;">press here to go on a student page</a>
+    <hr>
+    <p>ID of the employee <b>{{id}}</b></p>
+    <p>name of the employee <b>{{name}}</b></p>
+    <p>role of the employee <b>{{role}}</b></p>
+    <p>branch of the employee <b>{{branch}}</b></p>
+
+    {%if id %}
+    <p>this is if block the value is there</p>
+    {% else %}
+    <p>this is else block value is not there</p>
+    {%endif%}
+     
+<hr>
+<ul>
+    {% for i in branch %}
+
+        <li>{{i}}</li>
+    
+    {%endfor%}
+</ul>
+</body>
+</html>

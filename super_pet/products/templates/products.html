@@ -1,0 +1,21 @@
+{% extends "base.html" %}
+
+
+{% block title %}
+Products
+{% endblock %}
+
+
+{% block content %}
+<h1>Products page</h1>
+
+<div class="card-group">
+{% for i in products %}
+
+{% include 'card.html' with p=i %}
+
+{% endfor %}
+</div>
+
+
+{% endblock %}

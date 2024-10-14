@@ -1,0 +1,46 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Document</title>
+</head>
+<body>
+    <h1>students</h1>
+    <hr>
+    <p>{{id}}</p>
+    <p>my name is {{name}}</p>
+    <P>my home is in {{home}}</p>
+        <hr>
+<ul>
+
+    {% for i in subjects %}
+
+    <span>{{forloop.counter}}</span>
+    
+    <span>{{forloop.revcounter}}</span>
+    <span>{{forloop.counter0}}</span>
+    
+    <span>{{forloop.revcounter0}}</span>
+    <span>{{forloop.first}}</span>
+
+    <span>{{forloop.last}}</span>
+
+    
+    {%if forloop.first %}
+    <li style="color: red;">{{i}}</li>
+
+    {%else%}
+    <li style="color: blue;">{{i}}</li>
+    {%endif%}
+
+    {%endfor%}
+
+</ul>
+
+
+
+
+</body>
+</html>
+

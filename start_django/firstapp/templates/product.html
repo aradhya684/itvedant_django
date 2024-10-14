@@ -1,0 +1,24 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Document</title>
+</head>
+<body>
+
+    <form action="">
+
+        <label for="inpf">Write name of the product</label>
+        <input type="text" id="inpf" name="productname">
+        <label for="price">Write price of the product</label>
+        <input type="number" id="price" name="productprice">
+        <input type="submit">
+        {%if ProductName and ProductPrice%}
+        <p>Product Name:{{ProductName}}</p>
+        <p>Product price:{{ProductPrice}}</p>
+        {%endif%}
+    </form>
+    
+</body>
+</html>
