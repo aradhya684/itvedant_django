@@ -1,0 +1,38 @@
+{% extends 'base.html' %} 
+
+
+{% block content %} 
+<div class="card-group">
+{% for i in object_list %}
+
+
+<p>{{i}}</p>
+
+{% include 'card.html' with p=i %}
+
+
+{% endfor %}
+</div>
+
+{% endblock %}
+
+<!-- http://127.0.0.1:8000/products/1 this is called as interger pattern in urls
+http://127.0.0.1:8000/products/2 -->
+
+
+<!-- http://127.0.0.1:8000/products/catfood this is called string pattern in urls
+http://127.0.0.1:8000/products/doggood -->
+
+<!-- http://127.0.0.1:8000/products/cat-food this is called slug pattern when we use hyphen in urls
+http://127.0.0.1:8000/products/dog-food -->
+
+
+
+
+<!-- /<int:pk> we use to make urls in integer -->
+<!-- /<str:name> we use to make urls in strings -->
+<!-- /<slug:name> we use to make urls in slug -->
+
+
+
+

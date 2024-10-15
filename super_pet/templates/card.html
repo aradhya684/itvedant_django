@@ -1,11 +1,12 @@
 
-    
-          <img class="card-img-top" src="{{p.product_image.url}}" alt="Card image cap">
+    <a href="{% url 'product_detail' p.id %}">
+          <img class="card-img-top" src="{{p.product_image.url}}" alt="Card image cap"></a>
           <div class="card-body">
             <h5 class="card-title">{{p.product_name}}</h5>
             <p class="card-text">{{p.product_description}}</p>
             <p class="card-text"><small class="text-muted"><h4><b>Price: </b>{{p.product_price}}</h4></small></p>
           </div>
+        
        
 
     

@@ -1,5 +1,8 @@
 from django.shortcuts import render
 from .models import Product
+from django.views.generic import ListView,DetailView
+
+
 # Create your views here.
 #this is function based views
 def products(request):
@@ -19,10 +22,16 @@ def search(request):
     product = Product.cust_manager.all().filter(product_name__icontains = keyword)
     return render(request,"products.html", {"products":product})
 
+class ProductListView(ListView):
+    model = Product #keep this variable this is default variable
 
 
+class ProductDetailView(DetailView):
+    model = Product #keep this variable this is default variable
+    template_name = 'products/productdetails.html'
 
 
+    
 
 
 
