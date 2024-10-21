@@ -43,6 +43,7 @@ class ProductUpdateView(UpdateView):
     fields="__all__"
     success_url = "/products"
 
+
 class ProductDeleteView(DeleteView):
     model = Product
     success_url = "/products"
