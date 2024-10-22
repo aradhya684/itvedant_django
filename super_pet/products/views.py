@@ -1,5 +1,5 @@
 from django.shortcuts import render
-from .models import Product
+from .models import Product, Categories
 from django.views.generic import ListView,DetailView,CreateView,UpdateView,DeleteView
 
 
@@ -47,3 +47,11 @@ class ProductUpdateView(UpdateView):
 class ProductDeleteView(DeleteView):
     model = Product
     success_url = "/products"
+
+
+
+class CategoryDetailView(DetailView):
+    model = Categories #keep this variable this is default variable, here Product is our model name  
+    template_name = 'category/category_details.html'
+    slug_field = "category_slug"
+    context_object_name = "category_obj"

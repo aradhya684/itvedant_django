@@ -9,7 +9,7 @@ from .models import Product, Categories #import every model
 
 
 class productinfo(admin.ModelAdmin):
-    list_display =['id','product_name','product_brand','product_price'] #predefined variable do not write any other variable name
+    list_display =['id','product_name','product_brand','product_price','category'] #predefined variable do not write any other variable name
     
 
 admin.site.register(Product,productinfo) 

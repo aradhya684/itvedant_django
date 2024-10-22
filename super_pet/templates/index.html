@@ -123,15 +123,18 @@
 
 
     <div class="card-group row category container m-4" style="display: flex;">
+
       <!-- Dog foood -->
 
       <div class="col">
         <div class="card p-2">
-         
+          <a href="{% url 'categorydetail' slug='dog-food' %}">
+
           <img src="{%static 'img/dog-food.jpg'%}" class="card-img-top" alt="...">
           <div class="card-body">
             <h5 class="card-title bg-warning p-3">Dog Food</h5>
           </div>
+        </a>
 
 
         </div>
@@ -143,11 +146,12 @@
       <div class="col">
 
         <div class="card p-2">
-          
+          <a href="{% url 'categorydetail' slug='cat-food' %}">
           <img src="{% static 'img/cat-food.jpg'%}" class="card-img-top" alt="...">
           <div class="card-body">
             <h5 class="card-title bg-warning p-3">Cat Food</h5>
           </div>
+        </a>
         </div>
 
       </div>

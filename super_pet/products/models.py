@@ -3,6 +3,8 @@ from autoslug import AutoSlugField
 
 
 class Categories(models.Model):
+    def __str__(self):
+        return self.category_name
     category_name = models.CharField(max_length=100,null=False)
     category_slug = AutoSlugField(populate_from='category_name',unique=True)
 
@@ -40,6 +42,8 @@ class Product(models.Model):
     product_price = models.PositiveIntegerField(default=0)
     product_image = models.ImageField(upload_to="products/")
     product_brand = models.CharField(max_length=100,default="superpet")
+
+    category=models.ForeignKey(Categories,on_delete=models.SET_NULL,null=True)
 
     aradhya = models.Manager() #if you want to change the name of manager in shell from objects to aradhya
     cust_manager = custom_manager()
