@@ -55,3 +55,6 @@ class CategoryDetailView(DetailView):
     template_name = 'category/category_details.html'
     slug_field = "category_slug"
     context_object_name = "category_obj"
+
+
+    
