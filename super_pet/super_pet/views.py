@@ -1,5 +1,6 @@
 from django.shortcuts import render,HttpResponseRedirect
 from django.contrib.auth.forms import UserCreationForm
+from .forms import CustomUserCreationForm
 
 def home(request):
     return render(request,"index.html")
@@ -18,11 +19,13 @@ def login(request):
 
 def register(request):
     if request.method=="GET":
-        form = UserCreationForm()
+        # form = UserCreationForm()
+        form = CustomUserCreationForm 
         return render(request,"register.html",{"form":form})
     else:
-        form = UserCreationForm(request.POST)
+        form = CustomUserCreationForm(request.POST)
         if form.is_valid():
             form.save()
-        return HttpResponseRedirect("/login")
+            return HttpResponseRedirect("/login")
+        return render(request,"register.html",{"form":form})
 

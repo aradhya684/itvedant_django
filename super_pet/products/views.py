@@ -5,6 +5,7 @@ from django.views.generic import ListView,DetailView,CreateView,UpdateView,Delet
 
 # Create your views here.
 #this is function based views
+
 def products(request):
     return render(request,"products.html")
 
