@@ -30,7 +30,8 @@ urlpatterns = [
     path('', views.home, name="homepage"),
     path('contact/',views.contact,name="contactpage"),
     path('about/',views.about,name="aboutpage"),
-    path('login/',views.login,name="loginpage"),
+    path('login/',views.login_user,name="loginpage"),
+    path('logout/',views.logout_user,name="logoutpage"),
     path('register/',views.register,name="registerpage"),
     path('products/',include('products.urls'))
 

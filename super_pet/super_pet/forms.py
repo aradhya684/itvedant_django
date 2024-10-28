@@ -8,6 +8,7 @@ class CustomUserCreationForm(UserCreationForm):
         fields = ['username', 'first_name','last_name','email']
 
 
+#authenticate function to authenticate user it will give user object 
 
 
 
