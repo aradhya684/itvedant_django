@@ -70,3 +70,11 @@
  #Product.aradhya.all().filter(~Q(product_brand="Royal Canin")) 
 
 
+# in order to get cart we need to make some models
+
+# cart model 
+
+# cartId      userId                 CartItemId        cartId      product      quantity       
+# xyz            1                        1              xyz          p1            2
+# pqr            2                        2              xyz          p2            3
+#                                         1              pqr          p1            1
