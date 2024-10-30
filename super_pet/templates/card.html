@@ -8,7 +8,7 @@
             <p class="card-text">{{p.product_description}}</p>
             <p class="card-text"><small class="text-muted"><h4><b>Price: </b>{{p.product_price}}</h4></small></p>
 
-            <form action="">
+            <form action="{% url 'addtocart' p.id %}">
               <button type="button" onclick="updateQuantity(-1,{{p.id}})">-</button>
               <input type="number" name="number" id="quantity-{{p.id}}" value="1" min="1" max="12">
               <button type="button" onclick="updateQuantity(1,{{p.id}})">+</button><br>

@@ -19,7 +19,8 @@ from django.contrib import admin
 from django.urls import path,include
 from django.conf.urls.static import static
 from . import views #here dot . means same package or file not form another folder
-from products import urls #adding urls.py from products applcatiom
+from products import urls #adding urls.py from products applicatiom
+from cart import urls #adding urls.py from cart application
 from . import settings #here dot . means same package or file not form another folder
 
 
@@ -33,7 +34,8 @@ urlpatterns = [
     path('login/',views.login_user,name="loginpage"),
     path('logout/',views.logout_user,name="logoutpage"),
     path('register/',views.register,name="registerpage"),
-    path('products/',include('products.urls'))
+    path('products/',include('products.urls')),
+    path('cart/',include('cart.urls'))
 
 ]
 
