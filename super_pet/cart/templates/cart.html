@@ -10,5 +10,39 @@ Cart
 {% block content %}
 
 <h1>this is cart page</h1>
+<hr>
+{% for i in cart_items %}
+<!-- <hr>
+<li>{{i.quantity}}</li>
+<li>{{i.products.product_name}}</li>
+<li>{{i.products.product_price}}</li>
+<img src="{{ i.products.product_image.url }}" alt="" srcset="">-
+<hr> -->
+
+
+<div class="card mb-3" style="max-width: 540px;">
+    <div class="row no-gutters">
+      <div class="col-md-4">
+        <img src="{{ i.products.product_image.url }}" class="card-img" alt="...">
+      </div>
+      <div class="col-md-8">
+        <div class="card-body">
+          <h5 class="card-title">{{i.products.product_name}}</h5>
+          <p class="card-text">{{i.products.product_description}}<p>
+          <p class="card-text">Product quantity: <b>{{i.quantity}}</b><p>
+          <p class="card-text">Price: <b>{{i.products.product_price}}</b><p>
+          
+        </div>
+      </div>
+    </div>
+  </div>
+
+  {% endfor %}
+
+ 
+  <h1>Total Items price is: {{total}}</h1>
+
+
+
 
 {% endblock %}

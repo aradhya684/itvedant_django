@@ -74,10 +74,10 @@
 
 # cart model 
 
-# cartId      userId                 CartItemId        cartId      product      quantity       
-# xyz            1                        1              xyz          p1            2
-# pqr            2                        2              xyz          p2            3
-#                                         1              pqr          p1            1
+# cartId      userId                 #CartItemId        cartId      product      quantity       
+# xyz            1                   #     1              xyz          p1            2
+# pqr            2                   #     2              xyz          p2            3
+#                                    #     1              pqr          p1            1
 
 
 
