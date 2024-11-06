@@ -15,4 +15,13 @@ class CartItem(models.Model):
     quantity = models.IntegerField(default=0)
     products = models.ForeignKey(Product,on_delete = models.PROTECT)
 
+class Order(models.Model):
+    order_id = models.CharField(primary_key=True,max_length = 100)
+    user = models.ForeignKey(User,on_delete = models.SET_NULL,null = True)
+    address_line_1 = models.CharField(null = False,max_length = 100)
+    address_line_2 = models.CharField(null = False,max_length = 100)
+    city = models.CharField(null = False,max_length = 100)
+    state = models.CharField(null = False,max_length = 100)
+    pincode = models.IntegerField(null = False)
+    phone_no = models.BigIntegerField(null = False)
 

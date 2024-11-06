@@ -68,6 +68,12 @@ def employee(request):
         context=request.POST.get("empname")
         return render(request,"employee.html",{"emPname":context})
 
+
+
+def learnfilters(request):
+        return render(request,"newfile.html",{"data":"dJaNgO"})
+    
+
 #class based views
 #class based views
 #class based views 
@@ -81,4 +87,5 @@ class myview(View):
     def post(self,request):
         return render(request,"success.html")
    
+
 

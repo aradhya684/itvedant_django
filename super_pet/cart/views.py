@@ -24,7 +24,7 @@ def add_to_cart(request,productID):
 def show_cart(request):
     currentUser = request.user
     user_cart = cart.objects.get(user = currentUser)
-    cart_items = user_cart.cartitem_set.all() #here cartitem in our model name it is converted into lowercase form uppercase
+    cart_items = user_cart.cartitem_set.all() #here cartitem in our model name it is converted into lowercase from uppercase
     total = 0
     for i in cart_items:
         total += i.quantity*i.products.product_price
@@ -47,3 +47,5 @@ def delete_cartitem(request,pk):
 
 def checkout(request):
     return render(request,"checkout.html")
+
+

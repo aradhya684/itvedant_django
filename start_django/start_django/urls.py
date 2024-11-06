@@ -33,5 +33,6 @@ urlpatterns = [
     path('book/',views.book,name='book'),
     path('product/',views.product,name='product'),
     path('employee/',views.employee),
-    path('cbv/',views.myview.as_view(),name="cbv")
+    path('cbv/',views.myview.as_view(),name="cbv"),
+    path('learnfilters/',views.learnfilters,name="filters")
 ]

@@ -1,4 +1,5 @@
 {% extends 'base.html' %}
+{% load custom_filter %}
 
 {% block title %}
 
@@ -27,7 +28,7 @@ Cart
             <form action="{% url 'update-cart-item' i.id %}">
               <button type="button" onclick="updateQuantity(-1,{{i.id}})">-</button>
               <input type="number" name="quantity" id="quantity-{{i.id}}" value="{{i.quantity}}" min="1" max="12">
-              <button type="button" onclick="updateQuantity(1,{{i.id}})">+</button><br>
+              <button type="button" onclick="updateQuantity(1,{{i.id}})">+</button>
               <input class="btn btn-primary" type="submit" value="Update cart">
 
             </form>
@@ -39,6 +40,29 @@ Cart
 
   {% endfor %}
 
+  <table class="table" style="text-align: center;">
+    <thead>
+      <tr>
+        <th scope="col">ID</th>
+        <th scope="col">Product Name</th>
+        <th scope="col">Product price</th>
+        <th scope="col">Product quantity</th>
+        <th scope="col">Total price</th>
+      </tr>
+    </thead>
+    <tbody>
+      {% for i in cart_items %}
+      <tr>
+        <th scope="row">{{i.products.id}}</th>
+        <td>{{i.products.product_name}}</td>
+        <td>{{i.products.product_price}}</td>
+        <td>{{i.quantity}}</td>
+        <td>{{i.quantity|multiply:i.products.product_price}}</td>
+      </tr>
+      {% endfor %}
+
+    </tbody>
+  </table>
  
   <h1>Total Items price is: {{total}}</h1>
 
