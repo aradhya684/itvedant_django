@@ -30,7 +30,7 @@
         {% if request.user.first_name %}
         <a href="{% url 'showcart' %}"><i class="fa-solid fa-cart-shopping" style="color: #ffc800;"></i>></a>
 
-        <a class="btn btn-warning mx-2" href="{% url 'loginpage' %}" role="button">{{request.user.first_name}}</a>
+        <a class="btn btn-warning mx-2" href="" role="button">{{request.user.first_name}}</a>
         <a class="btn" href="{% url 'logoutpage' %}" role="button" id="button">Logout</a>
         {% else %}
         <a class="btn btn-warning mx-2" href="{% url 'loginpage' %}" role="button">Login</a>

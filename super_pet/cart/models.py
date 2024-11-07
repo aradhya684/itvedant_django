@@ -24,4 +24,7 @@ class Order(models.Model):
     state = models.CharField(null = False,max_length = 100)
     pincode = models.IntegerField(null = False)
     phone_no = models.BigIntegerField(null = False)
+    created_at = models.DateTimeField(auto_now_add = True, null = True)
+    updated_at = models.DateTimeField(auto_now = True,null = True)
+    paid = models.BooleanField(default = False)
 
