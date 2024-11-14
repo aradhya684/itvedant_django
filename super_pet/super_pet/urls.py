@@ -34,6 +34,7 @@ urlpatterns = [
     path('login/',views.login_user,name="loginpage"),
     path('logout/',views.logout_user,name="logoutpage"),
     path('register/',views.register,name="registerpage"),
+    path('adminportal/',views.admin,name="adminportal"),
     path('products/',include('products.urls')),
     path('cart/',include('cart.urls'))
 

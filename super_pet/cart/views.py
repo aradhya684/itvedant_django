@@ -3,9 +3,12 @@ from .models import cart,CartItem,Order
 from products.models import Product
 from .forms import orderform
 import uuid
+from django.core.mail import send_mail
+from super_pet.settings import EMAIL_HOST_USER
+from django.contrib.auth.decorators import login_required
 # Create your views here.
 
-
+@login_required(login_url = "/login")
 def add_to_cart(request,productID):
     # print("*********************",productID,"********************")
     # print("*********************",request.user,"*****************")
@@ -21,7 +24,7 @@ def add_to_cart(request,productID):
     cartitem.save()
     return HttpResponseRedirect("/products")
     
-
+@login_required(login_url = "/login")
 def show_cart(request):
     currentUser = request.user
     user_cart = cart.objects.get(user = currentUser)
@@ -31,7 +34,7 @@ def show_cart(request):
         total += i.quantity*i.products.product_price
     return render(request,'cart.html',{"cart_items":cart_items,"total":total})
 
-
+@login_required(login_url = "/login")
 def update_cartitem(request,pk):
     cartitem = CartItem.objects.get(id = pk)
     cartitem.quantity = int(int(request.GET.get('quantity')))
@@ -39,13 +42,20 @@ def update_cartitem(request,pk):
     
     return HttpResponseRedirect("/cart")
 
-
+@login_required(login_url = "/login")
 def delete_cartitem(request,pk):
     cartitem = CartItem.objects.get(id = pk)
     cartitem.delete()
+    send_mail(
+    "order id is 5",
+    "order placed successfully",
+    EMAIL_HOST_USER,
+    ["asaahire8@gmail.com","sadhvijadhav062@gmail.com","priyanka.vibhute@itvedant.com"],
+    fail_silently=False,)
+
     return HttpResponseRedirect("/cart")
 
-
+@login_required(login_url = "/login")
 def checkout(request):
     if request.method == 'GET':
         form = orderform()

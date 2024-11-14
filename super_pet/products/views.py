@@ -1,8 +1,8 @@
 from django.shortcuts import render
 from .models import Product, Categories
 from django.views.generic import ListView,DetailView,CreateView,UpdateView,DeleteView
-
-
+from django.utils.decorators import method_decorator
+from django.contrib.admin.views.decorators import staff_member_required
 # Create your views here.
 #this is function based views
 
@@ -33,18 +33,20 @@ class ProductDetailView(DetailView):
 
 #this is create view import above
 
+@method_decorator(staff_member_required,name = "dispatch")
 class ProductCreateView(CreateView):
     model = Product
     fields="__all__"
     success_url = "/products"
 
  #this is update view import above
+@method_decorator(staff_member_required,name = "dispatch")
 class ProductUpdateView(UpdateView):
     model = Product
     fields="__all__"
     success_url = "/products"
 
-
+@method_decorator(staff_member_required,name = "dispatch")
 class ProductDeleteView(DeleteView):
     model = Product
     success_url = "/products"
