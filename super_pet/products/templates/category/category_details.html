@@ -1,6 +1,17 @@
 {% extends 'base.html' %} 
 {% block content %}
 
+<div class="container w-50 m-3">
+    {% for i in category_all %}
+    <div class="list-group">
+        
+        <a href="{% url 'categorydetail' i.category_slug %}" class="list-group-item list-group-item-action active" aria-current="true">
+          {{i.category_name}}
+        </a>
+      </div>
+
+{% endfor %}
+</div>
 
 
 

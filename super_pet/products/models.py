@@ -5,7 +5,7 @@ from autoslug import AutoSlugField
 class Categories(models.Model):
     def __str__(self):
         return self.category_name
-    category_name = models.CharField(max_length=100,null=False)
+    category_name = models.CharField(max_length=110,null=False)
     category_slug = AutoSlugField(populate_from='category_name',unique=True)
 
 

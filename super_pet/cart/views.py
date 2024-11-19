@@ -46,12 +46,12 @@ def update_cartitem(request,pk):
 def delete_cartitem(request,pk):
     cartitem = CartItem.objects.get(id = pk)
     cartitem.delete()
-    send_mail(
-    "order id is 5",
-    "order placed successfully",
-    EMAIL_HOST_USER,
-    ["asaahire8@gmail.com","sadhvijadhav062@gmail.com","priyanka.vibhute@itvedant.com"],
-    fail_silently=False,)
+    # send_mail(
+    # "order id is 5",
+    # "order placed successfully",
+    # EMAIL_HOST_USER,
+    # ["asaahire8@gmail.com","sadhvijadhav062@gmail.com","priyanka.vibhute@itvedant.com"],
+    # fail_silently=False,)
 
     return HttpResponseRedirect("/cart")
 
